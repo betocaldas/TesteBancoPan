@@ -1,8 +1,8 @@
 package corp.bcapc.top100pan
 
 enum class NetworkState{
-    CONNECTING
-    , CONNECTED
-    , DISCONNECTED
+    DOWNLOADING
+    , FINISHED
     , FAIL
+    , MAX_ITEMS
 }

@@ -16,8 +16,9 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
         rank = intent.getParcelableExtra(Rank.TAG)
-
         binding.rank = rank
+
+        binding.fimgGame.setImageURI(rank.game.box.large)
     }
 
 }

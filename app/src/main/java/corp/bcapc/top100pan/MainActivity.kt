@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.GridLayoutManager
+import android.widget.Toast
 import corp.bcapc.top100pan.databinding.ActivityMainBinding
 import corp.bcapc.top100pan.model.Rank
 
@@ -29,6 +30,15 @@ class MainActivity : AppCompatActivity(), TwitchClick {
 
         twitchViewModel.liveData.observe(this, Observer {
             adapter.submitList(it)
+        })
+
+        twitchViewModel.networkState.observe(this, Observer {
+            when (it) {
+                NetworkState.MAX_ITEMS -> Toast.makeText(this@MainActivity,R.string.max_items,Toast.LENGTH_LONG).show()
+                NetworkState.DOWNLOADING -> Toast.makeText(this@MainActivity,R.string.downloading,Toast.LENGTH_LONG).show()
+                NetworkState.FAIL -> Toast.makeText(this@MainActivity,R.string.fail,Toast.LENGTH_LONG).show()
+                NetworkState.FINISHED -> Toast.makeText(this@MainActivity,R.string.finished,Toast.LENGTH_LONG).show()
+            }
         })
     }
 
