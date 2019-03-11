@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Top100Pan</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="name">Nome: %1$s</string>
+    <string name="channels">Total de canais: %1$d</string>
+    <string name="viewers">Visualizações: %1$d</string>
+</resources>
